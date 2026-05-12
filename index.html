@@ -4,6 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Mon Programme Muscu</title>
+<meta name="theme-color" content="#0f1117">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Mon Muscu">
+<meta name="mobile-web-app-capable" content="yes">
+<script>
+(function(){
+  const c = document.createElement('canvas');
+  c.width = c.height = 180;
+  const x = c.getContext('2d');
+  x.beginPath();
+  x.roundRect(0, 0, 180, 180, 38);
+  x.fillStyle = '#f0622a';
+  x.fill();
+  x.font = '96px serif';
+  x.textAlign = 'center';
+  x.textBaseline = 'middle';
+  x.fillText('💪', 90, 94);
+  const url = c.toDataURL('image/png');
+  ['icon','apple-touch-icon','shortcut icon'].forEach(function(rel){
+    const l = document.createElement('link');
+    l.rel = rel; l.href = url;
+    document.currentScript.parentNode.appendChild(l);
+  });
+})();
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
